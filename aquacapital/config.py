@@ -7,6 +7,10 @@ class Settings(BaseSettings):
     ANTHROPIC_API_KEY: str = ""
     ROMANIA_GOVERNANCE_SCORE: float = 0.3
     DEFAULT_COUNTRY: str = "RO"
+    # Finland / CASSINI
+    KAJAANI_LAT: float = 64.2245
+    KAJAANI_LON: float = 27.7177
+    FINLAND_LUMI_VALIDATION_THRESHOLD: float = 0.90
 
     model_config = {"env_file": ".env", "extra": "ignore"}
 

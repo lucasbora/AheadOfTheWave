@@ -2,13 +2,15 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.routes import risk, compliance, investment, users, explanation
+from api.routes import finland
 
 app = FastAPI(
     title="AquaCapital API",
-    version="0.2.0",
+    version="0.3.0",
     description=(
-        "Water risk investment intelligence powered by ESA Copernicus satellites "
-        "and WWF/WRI peer-reviewed methodologies."
+        "Water risk investment intelligence powered by ESA Copernicus satellites, "
+        "SYKE Finnish Environment Institute data, and WWF/WRI peer-reviewed methodologies. "
+        "CASSINI Hackathon 11 — Finland Oracle edition."
     ),
 )
 
@@ -25,6 +27,7 @@ app.include_router(compliance.router)
 app.include_router(investment.router)
 app.include_router(users.router)
 app.include_router(explanation.router)
+app.include_router(finland.router)
 
 
 @app.get("/")

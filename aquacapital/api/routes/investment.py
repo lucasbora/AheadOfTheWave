@@ -40,78 +40,82 @@ from services.formulas.investment_grade import (
     compare_locations,
 )
 from services.sentinel_ingest import fetch_sentinel2_data
-from config import ROMANIA_DEFAULTS
+from services.location_data import fetch_location_inputs, resolve
 
 router = APIRouter(prefix="/api/v1/investment", tags=["investment"])
 
 
-def _r(req: InvestmentGradeRequest, key: str):
-    """Return override value from request, falling back to Romania defaults."""
-    val = getattr(req, key, None)
-    return val if val is not None else ROMANIA_DEFAULTS.get(key)
-
-
 def _build_grade_response(req: InvestmentGradeRequest) -> InvestmentGradeResponse:
-    """Run the full scoring pipeline for a single location."""
-    # Satellite metadata — best effort, non-blocking
+    """
+    Full scoring pipeline for one location.
+    Data priority: user override > real API (Open-Meteo/EEA) > Romania defaults.
+    """
+
+    # --- Real location data (non-blocking) ---
+    real = fetch_location_inputs(req.lat, req.lon)
+
+    def r(key):
+        return resolve(getattr(req, key, None), key, real)
+
+    # --- Satellite metadata (non-blocking) ---
     sat_meta: SatelliteMetadata
     try:
         sat = fetch_sentinel2_data(req.lat, req.lon, req.buffer_km)
         sat_meta = SatelliteMetadata(**sat)
     except Exception:
         sat_meta = SatelliteMetadata(
-            note="Satellite query unavailable — formula scores computed with Romania defaults."
+            note="Satellite query unavailable — scores computed from ground data sources."
         )
 
-    # Band values
-    green = _r(req, "green_band") or 0.3
-    nir = _r(req, "nir_band") or 0.15
-    swir = _r(req, "swir_band") or 0.1
+    # --- Band values (from ingest output or defaults) ---
+    green = r("green_band") or 0.3
+    nir   = r("nir_band")   or 0.15
+    swir  = r("swir_band")  or 0.1
 
     ndwi = calculate_ndwi(green, nir)
     mndwi = calculate_mndwi(green, swir)
     fsi = calculate_flood_inundation_index(ndwi, mndwi, flood_frequency=0.15)
 
-    # Physical risk
+    # --- Physical risk ---
     wa_risks = [
-        calculate_water_depletion_risk(_r(req, "depletion_ratio")),
+        calculate_water_depletion_risk(r("depletion_ratio")),
         calculate_baseline_water_stress_risk(
-            _r(req, "annual_depletion_pct"),
-            _r(req, "dry_year_months"),
-            _r(req, "seasonal_months"),
+            r("annual_depletion_pct"),
+            r("dry_year_months"),
+            r("seasonal_months"),
         ),
-        calculate_groundwater_risk(_r(req, "groundwater_change_mm")),
+        calculate_groundwater_risk(r("groundwater_change_mm")),
     ]
     drought_risks = [
-        calculate_longterm_drought_risk(_r(req, "spei_dry_proportion_10yr")),
-        calculate_shortterm_drought_risk(_r(req, "spei_dry_proportion_3yr")),
+        calculate_longterm_drought_risk(r("spei_dry_proportion_10yr")),
+        calculate_shortterm_drought_risk(r("spei_dry_proportion_3yr")),
     ]
     flood_risks = [
-        calculate_flood_occurrence_risk(_r(req, "flood_events_count")),
-        calculate_flood_hazard_risk(_r(req, "avg_flood_depth_m")),
+        calculate_flood_occurrence_risk(r("flood_events_count")),
+        calculate_flood_hazard_risk(r("avg_flood_depth_m")),
     ]
 
-    bod_risk = calculate_biological_oxygen_demand_risk(_r(req, "bod_mg_per_l"))
-    nitrate_risk = calculate_nitrate_risk(_r(req, "nitrate_mg_per_l"))
-    wq = calculate_water_quality_composite(bod_risk, nitrate_risk, _r(req, "salinity_tds_mg_l"))
+    bod_risk     = calculate_biological_oxygen_demand_risk(r("bod_mg_per_l"))
+    nitrate_risk = calculate_nitrate_risk(r("nitrate_mg_per_l"))
+    wq           = calculate_water_quality_composite(bod_risk, nitrate_risk, r("salinity_tds_mg_l"))
 
     physical = calculate_wwf_physical_risk_composite(
         wa_risks, drought_risks, flood_risks, wq["composite_risk"], fsi
     )
 
-    # EAD
-    land_use = _r(req, "land_use_type") or "industrial_park"
+    # --- EAD ---
+    land_use = r("land_use_type") or "industrial_park"
     ead = calculate_expected_annual_damage_index(
-        _r(req, "flood_depth_m") or 2.5,
-        _r(req, "return_period_years") or 100,
+        r("flood_depth_m")       or 2.5,
+        r("return_period_years") or 100,
         land_use,
-        _r(req, "gdp_per_capita_usd") or 14000.0,
+        r("gdp_per_capita_usd")  or 14000.0,
     )
     ead_index = ead["total_damage_index"]
 
-    # Regulatory / compliance
+    # --- Regulatory / compliance ---
     reg_answers = {
-        k: _r(req, k)
+        k: r(k)
         for k in [
             "iwrm_policy_exists", "iwrm_in_law", "water_authority_exists",
             "water_authority_has_enforcement", "clean_water_standards_penalties",
@@ -122,9 +126,9 @@ def _build_grade_response(req: InvestmentGradeRequest) -> InvestmentGradeRespons
     }
     reg = calculate_regulatory_deficiency_score(reg_answers)
     regulatory_risk_score = (reg["implementation_adjusted_risk"] - 1) / 4.0
-    compliance_score = reg["normalized"]
+    compliance_score      = reg["normalized"]
 
-    # Investment grade
+    # --- Final grade ---
     grade = calculate_investment_grade(
         physical["composite"],
         regulatory_risk_score,
@@ -132,6 +136,10 @@ def _build_grade_response(req: InvestmentGradeRequest) -> InvestmentGradeRespons
         ead_index,
         req.user_type,
     )
+
+    # Annotate satellite metadata with data sources used
+    if real.get("_data_sources"):
+        sat_meta.note = "Ground data: " + "; ".join(real["_data_sources"])
 
     return InvestmentGradeResponse(
         score=grade["score"],
@@ -165,10 +173,9 @@ def compare(req: LocationCompareRequest) -> CompareResponse:
     ranked_dicts = compare_locations(
         [r.model_dump() for r in results], req.user_type
     )
-
     ranked = [InvestmentGradeResponse(**d) for d in ranked_dicts]
 
-    best = ranked[0].location_name or f"({ranked[0].score})"
+    best  = ranked[0].location_name  or f"({ranked[0].score})"
     worst = ranked[-1].location_name or f"({ranked[-1].score})"
 
     return CompareResponse(
@@ -192,10 +199,9 @@ def heatmap_points(
     if max_points > 25:
         raise HTTPException(status_code=400, detail="max_points cannot exceed 25.")
 
-    # Convert step_km to approximate degree steps
     center_lat = (lat_min + lat_max) / 2.0
-    step_lat = step_km / 111.0
-    step_lon = step_km / (111.0 * math.cos(math.radians(center_lat)))
+    step_lat   = step_km / 111.0
+    step_lon   = step_km / (111.0 * math.cos(math.radians(center_lat)))
 
     points: list[tuple[float, float]] = []
     lat = lat_min
@@ -208,7 +214,10 @@ def heatmap_points(
 
     results = []
     for lat, lon in points[:max_points]:
-        req = InvestmentGradeRequest(lat=lat, lon=lon, user_type=user_type, location_name=f"{lat},{lon}")
+        req = InvestmentGradeRequest(
+            lat=lat, lon=lon, user_type=user_type,
+            location_name=f"{lat},{lon}",
+        )
         results.append(_build_grade_response(req))
 
     return results

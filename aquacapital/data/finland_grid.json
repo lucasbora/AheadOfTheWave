@@ -1,0 +1,3219 @@
+{
+  "metadata": {
+    "center": {
+      "lat": 64.2245,
+      "lon": 27.7177
+    },
+    "radius_km": 100.0,
+    "grid_step_km": 20.0,
+    "total_points": 73,
+    "fetched_points": 73,
+    "last_updated": "2026-04-25T23:56:28.774745+00:00"
+  },
+  "points": {
+    "63.5038_26.8890": {
+      "lat": 63.5038,
+      "lon": 26.889,
+      "fetched_at": "2026-04-25T20:47:37.325875",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.5038&longitude=26.889&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.5038&longitude=26.889&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.5038_27.3033": {
+      "lat": 63.5038,
+      "lon": 27.3033,
+      "fetched_at": "2026-04-25T20:48:00.265126",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.5038&longitude=27.3033&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.5038&longitude=27.3033&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.5038_27.7177": {
+      "lat": 63.5038,
+      "lon": 27.7177,
+      "fetched_at": "2026-04-25T20:48:21.260733",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.5038&longitude=27.7177&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.5038&longitude=27.7177&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.5038_28.1321": {
+      "lat": 63.5038,
+      "lon": 28.1321,
+      "fetched_at": "2026-04-25T20:48:41.618665",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.5038&longitude=28.1321&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.5038&longitude=28.1321&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.5038_28.5464": {
+      "lat": 63.5038,
+      "lon": 28.5464,
+      "fetched_at": "2026-04-25T20:49:02.040767",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.5038&longitude=28.5464&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.5038&longitude=28.5464&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.6840_26.4746": {
+      "lat": 63.684,
+      "lon": 26.4746,
+      "fetched_at": "2026-04-25T20:49:40.577167+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=26.4746&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=26.4746&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.6840_26.8890": {
+      "lat": 63.684,
+      "lon": 26.889,
+      "fetched_at": "2026-04-25T20:51:43.739521+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=26.889&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=26.889&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.6840_27.3033": {
+      "lat": 63.684,
+      "lon": 27.3033,
+      "fetched_at": "2026-04-25T20:53:46.125181+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=27.3033&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=27.3033&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.6840_27.7177": {
+      "lat": 63.684,
+      "lon": 27.7177,
+      "fetched_at": "2026-04-25T20:55:51.339043+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=27.7177&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=27.7177&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.6840_28.1321": {
+      "lat": 63.684,
+      "lon": 28.1321,
+      "fetched_at": "2026-04-25T20:57:57.091876+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=28.1321&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=28.1321&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.6840_28.5464": {
+      "lat": 63.684,
+      "lon": 28.5464,
+      "fetched_at": "2026-04-25T21:00:03.673317+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=28.5464&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=28.5464&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.6840_28.9608": {
+      "lat": 63.684,
+      "lon": 28.9608,
+      "fetched_at": "2026-04-25T21:02:10.110685+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=28.9608&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.684&longitude=28.9608&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.8641_26.0603": {
+      "lat": 63.8641,
+      "lon": 26.0603,
+      "fetched_at": "2026-04-25T21:04:43.854200+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=26.0603&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=26.0603&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.8641_26.4746": {
+      "lat": 63.8641,
+      "lon": 26.4746,
+      "fetched_at": "2026-04-25T21:07:21.689778+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=26.4746&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=26.4746&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.8641_26.8890": {
+      "lat": 63.8641,
+      "lon": 26.889,
+      "fetched_at": "2026-04-25T21:09:59.331359+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=26.889&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=26.889&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.8641_27.3033": {
+      "lat": 63.8641,
+      "lon": 27.3033,
+      "fetched_at": "2026-04-25T21:12:37.825481+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=27.3033&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=27.3033&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.8641_27.7177": {
+      "lat": 63.8641,
+      "lon": 27.7177,
+      "fetched_at": "2026-04-25T21:15:15.798450+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=27.7177&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=27.7177&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.8641_28.1321": {
+      "lat": 63.8641,
+      "lon": 28.1321,
+      "fetched_at": "2026-04-25T21:17:55.879443+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=28.1321&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=28.1321&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.8641_28.5464": {
+      "lat": 63.8641,
+      "lon": 28.5464,
+      "fetched_at": "2026-04-25T21:20:37.019032+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=28.5464&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=28.5464&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.8641_28.9608": {
+      "lat": 63.8641,
+      "lon": 28.9608,
+      "fetched_at": "2026-04-25T21:23:16.974924+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=28.9608&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=28.9608&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "63.8641_29.3751": {
+      "lat": 63.8641,
+      "lon": 29.3751,
+      "fetched_at": "2026-04-25T21:25:57.765121+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=29.3751&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=63.8641&longitude=29.3751&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.0443_26.0603": {
+      "lat": 64.0443,
+      "lon": 26.0603,
+      "fetched_at": "2026-04-25T21:28:39.036468+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=26.0603&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=26.0603&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.0443_26.4746": {
+      "lat": 64.0443,
+      "lon": 26.4746,
+      "fetched_at": "2026-04-25T21:31:17.970914+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=26.4746&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=26.4746&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.0443_26.8890": {
+      "lat": 64.0443,
+      "lon": 26.889,
+      "fetched_at": "2026-04-25T21:33:56.451347+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=26.889&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=26.889&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.0443_27.3033": {
+      "lat": 64.0443,
+      "lon": 27.3033,
+      "fetched_at": "2026-04-25T21:36:34.187918+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": 0.127768,
+        "nir_band": 0.284547,
+        "swir_band": 0.229317,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=27.3033&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=27.3033&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.0443_27.7177": {
+      "lat": 64.0443,
+      "lon": 27.7177,
+      "fetched_at": "2026-04-25T21:39:28.526737+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": 0.128375,
+        "nir_band": 0.279006,
+        "swir_band": 0.23837,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=27.7177&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=27.7177&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.0443_28.1321": {
+      "lat": 64.0443,
+      "lon": 28.1321,
+      "fetched_at": "2026-04-25T21:42:30.666394+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": 0.121071,
+        "nir_band": 0.225986,
+        "swir_band": 0.181526,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=28.1321&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=28.1321&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.0443_28.5464": {
+      "lat": 64.0443,
+      "lon": 28.5464,
+      "fetched_at": "2026-04-25T21:45:30.782976+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": 0.12329,
+        "nir_band": 0.239553,
+        "swir_band": 0.263163,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=28.5464&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=28.5464&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.0443_28.9608": {
+      "lat": 64.0443,
+      "lon": 28.9608,
+      "fetched_at": "2026-04-25T21:48:30.258530+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": 0.122409,
+        "nir_band": 0.254589,
+        "swir_band": 0.207018,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=28.9608&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=28.9608&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.0443_29.3751": {
+      "lat": 64.0443,
+      "lon": 29.3751,
+      "fetched_at": "2026-04-25T21:51:29.049412+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=29.3751&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.0443&longitude=29.3751&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.2245_26.0603": {
+      "lat": 64.2245,
+      "lon": 26.0603,
+      "fetched_at": "2026-04-25T21:54:11.245564+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.2245&longitude=26.0603&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.2245&longitude=26.0603&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.2245_26.4746": {
+      "lat": 64.2245,
+      "lon": 26.4746,
+      "fetched_at": "2026-04-25T21:56:52.598171+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.2245&longitude=26.4746&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.2245&longitude=26.4746&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.2245_26.8890": {
+      "lat": 64.2245,
+      "lon": 26.889,
+      "fetched_at": "2026-04-25T21:59:33.263090+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.2245&longitude=26.889&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.2245&longitude=26.889&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.2245_27.3033": {
+      "lat": 64.2245,
+      "lon": 27.3033,
+      "fetched_at": "2026-04-25T22:02:13.697108+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": 0.097512,
+        "nir_band": 0.099886,
+        "swir_band": 0.101642,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.2245&longitude=27.3033&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.2245&longitude=27.3033&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.2245_27.7177": {
+      "lat": 64.2245,
+      "lon": 27.7177,
+      "fetched_at": "2026-04-25T22:06:42.530288+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": 0.200182,
+        "nir_band": 0.338012,
+        "swir_band": 0.379533,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.2245&longitude=27.7177&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.2245&longitude=27.7177&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.2245_28.1321": {
+      "lat": 64.2245,
+      "lon": 28.1321,
+      "fetched_at": "2026-04-25T23:01:20.098547+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5
+      },
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": 0.119799,
+        "nir_band": 0.237529,
+        "swir_band": 0.195358,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Max retries exceeded with url: /v1/archive?latitude=64.2245&longitude=28.1321&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC (Caused by NameResolutionError(\"HTTPSConnection(host='archive-api.open-meteo.com', port=443): Failed to resolve 'archive-api.open-meteo.com' ([Errno 11001] getaddrinfo failed)\"))",
+        "water_quality: HTTPSConnectionPool(host='water.discomap.eea.europa.eu', port=443): Max retries exceeded with url: /arcgis/rest/services/WISE/WISE_WFD_Status/MapServer/0/query?geometry=28.1321%2C64.2245&geometryType=esriGeometryPoint&spatialRel=esriSpatialRelIntersects&inSR=4326&distance=50000&units=esriSRUnit_Meter&outFields=EcologicalStatusOrPotentialValue%2CWaterBodyName%2CRBDName&returnGeometry=false&f=json&resultRecordCount=5 (Caused by NameResolutionError(\"HTTPSConnection(host='water.discomap.eea.europa.eu', port=443): Failed to resolve 'water.discomap.eea.europa.eu' ([Errno 11001] getaddrinfo failed)\"))",
+        "cndcp: HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Max retries exceeded with url: /v1/archive?latitude=64.2245&longitude=28.1321&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC (Caused by NameResolutionError(\"HTTPSConnection(host='archive-api.open-meteo.com', port=443): Failed to resolve 'archive-api.open-meteo.com' ([Errno 11001] getaddrinfo failed)\"))"
+      ]
+    },
+    "64.2245_28.5464": {
+      "lat": 64.2245,
+      "lon": 28.5464,
+      "fetched_at": "2026-04-25T23:02:41.020873+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1311,
+        "spei_dry_proportion_3yr": 0.1944,
+        "groundwater_change_mm": -9.91,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.66,
+        "cdd": 93.6,
+        "bws": 0.0341,
+        "norm_inv_cdd": 0.5342,
+        "one_minus_bws": 0.9659,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.124005,
+        "nir_band": 0.251691,
+        "swir_band": 0.190595,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.2245_28.9608": {
+      "lat": 64.2245,
+      "lon": 28.9608,
+      "fetched_at": "2026-04-25T23:04:18.148425+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1148,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -11.38,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6739,
+        "cdd": 87.8,
+        "bws": 0.0347,
+        "norm_inv_cdd": 0.5695,
+        "one_minus_bws": 0.9653,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.118839,
+        "nir_band": 0.232089,
+        "swir_band": 0.20509,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.2245_29.3751": {
+      "lat": 64.2245,
+      "lon": 29.3751,
+      "fetched_at": "2026-04-25T23:05:58.302644+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1066,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -11.63,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6503,
+        "cdd": 97.9,
+        "bws": 0.035,
+        "norm_inv_cdd": 0.5107,
+        "one_minus_bws": 0.965,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.4047_26.0603": {
+      "lat": 64.4047,
+      "lon": 26.0603,
+      "fetched_at": "2026-04-25T23:07:17.137045+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1311,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -4.95,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6601,
+        "cdd": 93.8,
+        "bws": 0.0328,
+        "norm_inv_cdd": 0.533,
+        "one_minus_bws": 0.9672,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.4047_26.4746": {
+      "lat": 64.4047,
+      "lon": 26.4746,
+      "fetched_at": "2026-04-25T23:08:37.354213+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1393,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -6.46,
+        "flood_events_count": 2,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6875,
+        "cdd": 83.2,
+        "bws": 0.0322,
+        "norm_inv_cdd": 0.601,
+        "one_minus_bws": 0.9678,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.4047_26.8890": {
+      "lat": 64.4047,
+      "lon": 26.889,
+      "fetched_at": "2026-04-25T23:09:57.600432+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1311,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -5.08,
+        "flood_events_count": 2,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6104,
+        "cdd": 121.9,
+        "bws": 0.0342,
+        "norm_inv_cdd": 0.4102,
+        "one_minus_bws": 0.9658,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.4047_27.3033": {
+      "lat": 64.4047,
+      "lon": 27.3033,
+      "fetched_at": "2026-04-25T23:11:17.376719+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1066,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -5.85,
+        "flood_events_count": 1,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6429,
+        "cdd": 102.4,
+        "bws": 0.031,
+        "norm_inv_cdd": 0.4883,
+        "one_minus_bws": 0.969,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.129763,
+        "nir_band": 0.291359,
+        "swir_band": 0.210872,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.4047_27.7177": {
+      "lat": 64.4047,
+      "lon": 27.7177,
+      "fetched_at": "2026-04-25T23:12:54.709200+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.123,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -5.75,
+        "flood_events_count": 1,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6388,
+        "cdd": 105.0,
+        "bws": 0.0291,
+        "norm_inv_cdd": 0.4762,
+        "one_minus_bws": 0.9709,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.181562,
+        "nir_band": 0.313037,
+        "swir_band": 0.393275,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.4047_28.1321": {
+      "lat": 64.4047,
+      "lon": 28.1321,
+      "fetched_at": "2026-04-25T23:14:31.385304+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1066,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -7.02,
+        "flood_events_count": 1,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6508,
+        "cdd": 98.1,
+        "bws": 0.0328,
+        "norm_inv_cdd": 0.5097,
+        "one_minus_bws": 0.9672,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.138339,
+        "nir_band": 0.276401,
+        "swir_band": 0.264739,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.4047_28.5464": {
+      "lat": 64.4047,
+      "lon": 28.5464,
+      "fetched_at": "2026-04-25T23:16:08.291720+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1148,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -9.17,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6802,
+        "cdd": 85.8,
+        "bws": 0.0324,
+        "norm_inv_cdd": 0.5828,
+        "one_minus_bws": 0.9676,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.138862,
+        "nir_band": 0.300065,
+        "swir_band": 0.206778,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.4047_28.9608": {
+      "lat": 64.4047,
+      "lon": 28.9608,
+      "fetched_at": "2026-04-25T23:17:45.841401+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1066,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -11.93,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.681,
+        "cdd": 85.0,
+        "bws": 0.0357,
+        "norm_inv_cdd": 0.5882,
+        "one_minus_bws": 0.9643,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.124477,
+        "nir_band": 0.27002,
+        "swir_band": 0.228637,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.4047_29.3751": {
+      "lat": 64.4047,
+      "lon": 29.3751,
+      "fetched_at": "2026-04-25T23:19:22.507082+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1148,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -12.5,
+        "flood_events_count": 1,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6787,
+        "cdd": 85.9,
+        "bws": 0.0353,
+        "norm_inv_cdd": 0.5821,
+        "one_minus_bws": 0.9647,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.5849_26.0603": {
+      "lat": 64.5849,
+      "lon": 26.0603,
+      "fetched_at": "2026-04-25T23:20:42.704121+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1475,
+        "spei_dry_proportion_3yr": 0.1944,
+        "groundwater_change_mm": -2.7,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.653,
+        "cdd": 97.6,
+        "bws": 0.0297,
+        "norm_inv_cdd": 0.5123,
+        "one_minus_bws": 0.9703,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.5849_26.4746": {
+      "lat": 64.5849,
+      "lon": 26.4746,
+      "fetched_at": "2026-04-25T23:22:01.262683+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1475,
+        "spei_dry_proportion_3yr": 0.1944,
+        "groundwater_change_mm": -3.29,
+        "flood_events_count": 2,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6644,
+        "cdd": 92.4,
+        "bws": 0.0302,
+        "norm_inv_cdd": 0.5411,
+        "one_minus_bws": 0.9698,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.5849_26.8890": {
+      "lat": 64.5849,
+      "lon": 26.889,
+      "fetched_at": "2026-04-25T23:23:18.532214+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.123,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -5.48,
+        "flood_events_count": 1,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6524,
+        "cdd": 97.7,
+        "bws": 0.0307,
+        "norm_inv_cdd": 0.5118,
+        "one_minus_bws": 0.9693,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.5849_27.3033": {
+      "lat": 64.5849,
+      "lon": 27.3033,
+      "fetched_at": "2026-04-25T23:24:33.591885+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.123,
+        "spei_dry_proportion_3yr": 0.1389,
+        "groundwater_change_mm": -4.43,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6538,
+        "cdd": 97.4,
+        "bws": 0.0288,
+        "norm_inv_cdd": 0.5133,
+        "one_minus_bws": 0.9712,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.144934,
+        "nir_band": 0.317175,
+        "swir_band": 0.269784,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.5849_27.7177": {
+      "lat": 64.5849,
+      "lon": 27.7177,
+      "fetched_at": "2026-04-25T23:25:59.992004+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1311,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -5.81,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6596,
+        "cdd": 94.8,
+        "bws": 0.0283,
+        "norm_inv_cdd": 0.5274,
+        "one_minus_bws": 0.9717,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.199702,
+        "nir_band": 0.33745,
+        "swir_band": 0.241073,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.5849_28.1321": {
+      "lat": 64.5849,
+      "lon": 28.1321,
+      "fetched_at": "2026-04-25T23:27:27.682434+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1311,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -6.27,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6881,
+        "cdd": 83.6,
+        "bws": 0.0278,
+        "norm_inv_cdd": 0.5981,
+        "one_minus_bws": 0.9722,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.152579,
+        "nir_band": 0.27943,
+        "swir_band": 0.191486,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.5849_28.5464": {
+      "lat": 64.5849,
+      "lon": 28.5464,
+      "fetched_at": "2026-04-25T23:28:54.133154+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1148,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -9.23,
+        "flood_events_count": 1,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6642,
+        "cdd": 91.8,
+        "bws": 0.0342,
+        "norm_inv_cdd": 0.5447,
+        "one_minus_bws": 0.9658,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.124503,
+        "nir_band": 0.254058,
+        "swir_band": 0.221728,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.5849_28.9608": {
+      "lat": 64.5849,
+      "lon": 28.9608,
+      "fetched_at": "2026-04-25T23:30:21.034142+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1148,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -10.72,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6966,
+        "cdd": 79.7,
+        "bws": 0.0358,
+        "norm_inv_cdd": 0.6274,
+        "one_minus_bws": 0.9642,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.135776,
+        "nir_band": 0.262971,
+        "swir_band": 0.265299,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.5849_29.3751": {
+      "lat": 64.5849,
+      "lon": 29.3751,
+      "fetched_at": "2026-04-25T23:31:50.663679+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.123,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -11.91,
+        "flood_events_count": 1,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6857,
+        "cdd": 83.2,
+        "bws": 0.0367,
+        "norm_inv_cdd": 0.601,
+        "one_minus_bws": 0.9633,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.7650_26.0603": {
+      "lat": 64.765,
+      "lon": 26.0603,
+      "fetched_at": "2026-04-25T23:33:05.733857+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1475,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -1.42,
+        "flood_events_count": 1,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.661,
+        "cdd": 94.3,
+        "bws": 0.0276,
+        "norm_inv_cdd": 0.5302,
+        "one_minus_bws": 0.9724,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.7650_26.4746": {
+      "lat": 64.765,
+      "lon": 26.4746,
+      "fetched_at": "2026-04-25T23:34:22.714743+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1393,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -3.77,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6622,
+        "cdd": 93.5,
+        "bws": 0.0293,
+        "norm_inv_cdd": 0.5348,
+        "one_minus_bws": 0.9707,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.7650_26.8890": {
+      "lat": 64.765,
+      "lon": 26.889,
+      "fetched_at": "2026-04-25T23:35:38.636070+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.123,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -6.59,
+        "flood_events_count": 1,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6645,
+        "cdd": 92.3,
+        "bws": 0.0305,
+        "norm_inv_cdd": 0.5417,
+        "one_minus_bws": 0.9695,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.7650_27.3033": {
+      "lat": 64.765,
+      "lon": 27.3033,
+      "fetched_at": "2026-04-25T23:36:55.948157+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1311,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -4.84,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6845,
+        "cdd": 84.8,
+        "bws": 0.0284,
+        "norm_inv_cdd": 0.5896,
+        "one_minus_bws": 0.9716,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.139025,
+        "nir_band": 0.324704,
+        "swir_band": 0.256639,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.7650_27.7177": {
+      "lat": 64.765,
+      "lon": 27.7177,
+      "fetched_at": "2026-04-25T23:38:31.518739+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1311,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -5.65,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6759,
+        "cdd": 87.9,
+        "bws": 0.0291,
+        "norm_inv_cdd": 0.5688,
+        "one_minus_bws": 0.9709,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.135391,
+        "nir_band": 0.273582,
+        "swir_band": 0.227978,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.7650_28.1321": {
+      "lat": 64.765,
+      "lon": 28.1321,
+      "fetched_at": "2026-04-25T23:40:06.548582+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.123,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -5.96,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6917,
+        "cdd": 82.1,
+        "bws": 0.0298,
+        "norm_inv_cdd": 0.609,
+        "one_minus_bws": 0.9702,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.154077,
+        "nir_band": 0.343961,
+        "swir_band": 0.290448,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.7650_28.5464": {
+      "lat": 64.765,
+      "lon": 28.5464,
+      "fetched_at": "2026-04-25T23:41:36.161153+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1393,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -7.48,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6792,
+        "cdd": 85.9,
+        "bws": 0.034,
+        "norm_inv_cdd": 0.5821,
+        "one_minus_bws": 0.966,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.153552,
+        "nir_band": 0.359131,
+        "swir_band": 0.287371,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.7650_28.9608": {
+      "lat": 64.765,
+      "lon": 28.9608,
+      "fetched_at": "2026-04-25T23:43:24.748204+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1311,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -7.01,
+        "flood_events_count": 2,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6508,
+        "cdd": 98.4,
+        "bws": 0.0311,
+        "norm_inv_cdd": 0.5081,
+        "one_minus_bws": 0.9689,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": 0.122327,
+        "nir_band": 0.251108,
+        "swir_band": 0.222087,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.7650_29.3751": {
+      "lat": 64.765,
+      "lon": 29.3751,
+      "fetched_at": "2026-04-25T23:45:02.890193+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1148,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -10.85,
+        "flood_events_count": 1,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6847,
+        "cdd": 83.7,
+        "bws": 0.0357,
+        "norm_inv_cdd": 0.5974,
+        "one_minus_bws": 0.9643,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.9452_26.4746": {
+      "lat": 64.9452,
+      "lon": 26.4746,
+      "fetched_at": "2026-04-25T23:46:19.668434+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1557,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -3.1,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6566,
+        "cdd": 96.2,
+        "bws": 0.0284,
+        "norm_inv_cdd": 0.5198,
+        "one_minus_bws": 0.9716,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.9452_26.8890": {
+      "lat": 64.9452,
+      "lon": 26.889,
+      "fetched_at": "2026-04-25T23:47:38.888755+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1393,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -3.51,
+        "flood_events_count": 2,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6599,
+        "cdd": 94.7,
+        "bws": 0.0282,
+        "norm_inv_cdd": 0.528,
+        "one_minus_bws": 0.9718,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.9452_27.3033": {
+      "lat": 64.9452,
+      "lon": 27.3033,
+      "fetched_at": "2026-04-25T23:48:56.954785+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1311,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -3.73,
+        "flood_events_count": 1,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.6689,
+        "cdd": 90.7,
+        "bws": 0.029,
+        "norm_inv_cdd": 0.5513,
+        "one_minus_bws": 0.971,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.9452_27.7177": {
+      "lat": 64.9452,
+      "lon": 27.7177,
+      "fetched_at": "2026-04-25T23:50:13.512902+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1148,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -5.15,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.678,
+        "cdd": 86.8,
+        "bws": 0.0309,
+        "norm_inv_cdd": 0.576,
+        "one_minus_bws": 0.9691,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.9452_28.1321": {
+      "lat": 64.9452,
+      "lon": 28.1321,
+      "fetched_at": "2026-04-25T23:51:29.283509+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1148,
+        "spei_dry_proportion_3yr": 0.1389,
+        "groundwater_change_mm": -6.13,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {
+        "cndcp_score": 0.7115,
+        "cdd": 75.7,
+        "bws": 0.0317,
+        "norm_inv_cdd": 0.6605,
+        "one_minus_bws": 0.9683,
+        "grade": "B"
+      },
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": []
+    },
+    "64.9452_28.5464": {
+      "lat": 64.9452,
+      "lon": 28.5464,
+      "fetched_at": "2026-04-25T23:52:48.141515+00:00",
+      "risk_inputs": {
+        "spei_dry_proportion_10yr": 0.1311,
+        "spei_dry_proportion_3yr": 0.1667,
+        "groundwater_change_mm": -6.67,
+        "flood_events_count": 0,
+        "avg_flood_depth_m": 0.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.9452&longitude=28.5464&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    },
+    "64.9452_28.9608": {
+      "lat": 64.9452,
+      "lon": 28.9608,
+      "fetched_at": "2026-04-25T23:54:04.382901+00:00",
+      "risk_inputs": {
+        "depletion_ratio": 0.35,
+        "annual_depletion_pct": 30.0,
+        "dry_year_months": 5,
+        "seasonal_months": 3,
+        "groundwater_change_mm": -25.0,
+        "spei_dry_proportion_10yr": 0.25,
+        "spei_dry_proportion_3yr": 0.2,
+        "flood_events_count": 8,
+        "avg_flood_depth_m": 3.5,
+        "bod_mg_per_l": 2.5,
+        "nitrate_mg_per_l": 0.6,
+        "salinity_tds_mg_l": 150.0
+      },
+      "wq_status": "Unknown",
+      "syke": {
+        "flood_zone": "None",
+        "in_50yr_zone": false,
+        "in_100yr_zone": false,
+        "in_250yr_zone": false,
+        "groundwater_class": null,
+        "class_weight": 0.3,
+        "area_name": null,
+        "nearest_lake": null,
+        "lake_depth_m": null,
+        "heat_exchange_viable": false
+      },
+      "cndcp": {},
+      "sentinel": {
+        "green_band": null,
+        "nir_band": null,
+        "swir_band": null,
+        "vv_band": null,
+        "vh_band": null
+      },
+      "errors": [
+        "climate: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.9452&longitude=28.9608&start_date=2016-03-28&end_date=2026-04-18&daily=precipitation_sum&timezone=UTC",
+        "cndcp: 429 Client Error: Too Many Requests for url: https://archive-api.open-meteo.com/v1/archive?latitude=64.9452&longitude=28.9608&start_date=2025-01-01&end_date=2025-12-31&daily=temperature_2m_mean&timezone=UTC"
+      ]
+    }
+  }
+}

@@ -13,7 +13,7 @@ import numpy as np
 import requests
 
 ARCHIVE_URL = "https://archive-api.open-meteo.com/v1/archive"
-TIMEOUT = 45
+TIMEOUT = 22  # parallel calls — 22s each is safe within 28s pool timeout
 
 
 def _fetch_daily(lat: float, lon: float, start: str, end: str, variables: list[str]) -> dict:
@@ -25,7 +25,15 @@ def _fetch_daily(lat: float, lon: float, start: str, end: str, variables: list[s
         "daily": ",".join(variables),
         "timezone": "UTC",
     }
-    r = requests.get(ARCHIVE_URL, params=params, timeout=TIMEOUT)
+    import time as _time
+    for attempt in range(4):
+        r = requests.get(ARCHIVE_URL, params=params, timeout=TIMEOUT)
+        if r.status_code == 429:
+            wait = 10 * (attempt + 1)  # 10s, 20s, 30s, 40s
+            _time.sleep(wait)
+            continue
+        r.raise_for_status()
+        return r.json()
     r.raise_for_status()
     return r.json()
 
@@ -53,17 +61,16 @@ def fetch_drought_indices(lat: float, lon: float) -> dict:
     Source: Open-Meteo ERA5 archive (Hersbach et al., 2020).
     """
     now = datetime.utcnow()
+    # End 7 days ago — Open-Meteo archive lags ~5 days; soil moisture lags more
+    end   = (now - timedelta(days=7)).strftime("%Y-%m-%d")
     start = (now - timedelta(days=365 * 10 + 30)).strftime("%Y-%m-%d")
-    end = now.strftime("%Y-%m-%d")
 
-    data = _fetch_daily(
-        lat, lon, start, end,
-        ["precipitation_sum", "soil_moisture_28_to_100cm"],
-    )
+    # Request precipitation only — soil_moisture_28_to_100cm is unreliable
+    # across all ERA5 dates and causes HTTP 400 for some coordinate/date combos
+    data = _fetch_daily(lat, lon, start, end, ["precipitation_sum"])
     daily = data.get("daily", {})
     dates = daily.get("time", [])
     precip = daily.get("precipitation_sum", [])
-    soil = daily.get("soil_moisture_28_to_100cm", [])
 
     monthly = _monthly_totals(dates, precip)
     if len(monthly) < 24:
@@ -75,14 +82,9 @@ def fetch_drought_indices(lat: float, lon: float) -> dict:
     spi_3yr = spi[-36:] if len(spi) >= 36 else spi
     dry_3yr = sum(1 for s in spi_3yr if s < -1.0) / max(len(spi_3yr), 1)
 
-    # Groundwater proxy: trend in deep soil moisture (28–100 cm)
-    gw_change = 0.0
-    sm_valid = [v for v in soil if v is not None]
-    if len(sm_valid) >= 730:
-        recent = float(np.mean(sm_valid[-365:]))
-        older = float(np.mean(sm_valid[-730:-365]))
-        # Convert volumetric fraction change to mm equivalent over 720 mm soil depth
-        gw_change = round((recent - older) * 720.0, 2)
+    # Groundwater proxy from precipitation anomaly (negative SPI = groundwater stress)
+    recent_spi = spi[-24:] if len(spi) >= 24 else spi
+    gw_change = round(float(np.mean(recent_spi)) * 30.0, 2)  # mm proxy
 
     return {
         "spei_dry_proportion_10yr": round(dry_10yr, 4),
@@ -101,7 +103,7 @@ def fetch_flood_metrics(lat: float, lon: float) -> dict:
     """
     now = datetime.utcnow()
     start = "1985-01-01"
-    end = now.strftime("%Y-%m-%d")
+    end = (now - timedelta(days=7)).strftime("%Y-%m-%d")
 
     data = _fetch_daily(lat, lon, start, end, ["precipitation_sum"])
     daily = data.get("daily", {})

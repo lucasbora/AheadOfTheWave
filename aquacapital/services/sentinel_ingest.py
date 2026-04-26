@@ -95,7 +95,7 @@ def _search(filter_str: str, top: int = 1) -> list[dict]:
                 "$expand": "Attributes",
             },
             headers={"Authorization": f"Bearer {token}"},
-            timeout=60,
+            timeout=8,   # fail fast — metadata is best-effort, never blocks scoring
         )
         if response.status_code == 401 and attempt == 0:
             global _cached_token

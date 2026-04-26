@@ -41,6 +41,13 @@ class WatershedTargetResponse(BaseModel):
     methodology: str
 
 
+class GalileoInstrumentSpec(BaseModel):
+    service: str
+    sigma_vertical_mm: float
+    sigma_horizontal_mm: float
+    esa_reference: str
+
+
 class GalileoSubsidenceResponse(BaseModel):
     location: dict[str, float]
     monitoring_period_months: int
@@ -50,7 +57,7 @@ class GalileoSubsidenceResponse(BaseModel):
     extraction_level: str
     abstraction_m3day: float
     alert: dict[str, Any]
-    instrument: dict[str, str]
+    instrument: GalileoInstrumentSpec
     gia_model: str
     monthly_readings: list[dict[str, Any]]
     total_displacement_trend_mm: float

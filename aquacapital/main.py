@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from api.routes import risk, compliance, investment, users, explanation
 from api.routes import finland
+from api.routes import frontend_adapter, persistence
 
 app = FastAPI(
     title="AquaCapital API",
@@ -28,6 +29,8 @@ app.include_router(investment.router)
 app.include_router(users.router)
 app.include_router(explanation.router)
 app.include_router(finland.router)
+app.include_router(frontend_adapter.router)
+app.include_router(persistence.router)
 
 
 @app.get("/")

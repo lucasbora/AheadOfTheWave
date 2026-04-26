@@ -1,0 +1,187 @@
+.App {
+    min-height: 100vh;
+    background: #0a0e1a;
+    color: #fff;
+}
+
+/* Panel base */
+.panel {
+    background: #0b101d;
+    border: 1px solid #1e2535;
+    border-radius: 0;
+}
+
+/* Section labels (overline) */
+.label-overline {
+    font-family: "Geist Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #5c667a;
+}
+
+.divider {
+    height: 1px;
+    background: #1e2535;
+    width: 100%;
+}
+
+/* Risk dot */
+.risk-dot {
+    width: 8px;
+    height: 8px;
+    background: #1e2535;
+    border-radius: 0;
+}
+.risk-dot.on-1 {
+    background: #30d158;
+}
+.risk-dot.on-2 {
+    background: #00d4b2;
+}
+.risk-dot.on-3 {
+    background: #ff9f0a;
+}
+.risk-dot.on-4 {
+    background: #ff6b00;
+}
+.risk-dot.on-5 {
+    background: #ff3b30;
+}
+
+/* FSI gauge */
+.gauge-track {
+    height: 4px;
+    background: #1e2535;
+    width: 100%;
+    position: relative;
+}
+.gauge-fill {
+    height: 100%;
+    transform-origin: left;
+}
+
+/* Custom Leaflet marker */
+.aotw-pin {
+    width: 14px;
+    height: 14px;
+    background: #00c2ff;
+    border: 2px solid #0a0e1a;
+    box-shadow:
+        0 0 0 1px #00c2ff,
+        0 0 12px rgba(0, 194, 255, 0.6);
+    transform: rotate(45deg);
+}
+.aotw-pin.grade-aplus {
+    background: #30d158;
+    box-shadow:
+        0 0 0 1px #30d158,
+        0 0 12px rgba(48, 209, 88, 0.6);
+}
+.aotw-pin.grade-a {
+    background: #00c2ff;
+    box-shadow:
+        0 0 0 1px #00c2ff,
+        0 0 12px rgba(0, 194, 255, 0.6);
+}
+.aotw-pin.grade-b {
+    background: #00d4b2;
+    box-shadow:
+        0 0 0 1px #00d4b2,
+        0 0 12px rgba(0, 212, 178, 0.6);
+}
+.aotw-pin.grade-c {
+    background: #ff9f0a;
+    box-shadow:
+        0 0 0 1px #ff9f0a,
+        0 0 12px rgba(255, 159, 10, 0.5);
+}
+.aotw-pin.grade-d {
+    background: #ff6b00;
+    box-shadow:
+        0 0 0 1px #ff6b00,
+        0 0 12px rgba(255, 107, 0, 0.5);
+}
+.aotw-pin.grade-f {
+    background: #ff3b30;
+    box-shadow:
+        0 0 0 1px #ff3b30,
+        0 0 12px rgba(255, 59, 48, 0.6);
+}
+
+/* Heatmap dot */
+.heatmap-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid rgba(10, 14, 26, 0.85);
+}
+
+/* Tab underline */
+.tab-link {
+    position: relative;
+    padding: 14px 14px;
+    color: #8b95a5;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    transition: color 0.18s ease;
+}
+.tab-link:hover {
+    color: #fff;
+}
+.tab-link.active {
+    color: #fff;
+}
+.tab-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: #00c2ff;
+}
+
+/* Progress arc */
+.progress-arc {
+    transform: rotate(-90deg);
+}
+
+/* Text glow on big grade */
+.grade-glow-aplus {
+    text-shadow: 0 0 24px rgba(48, 209, 88, 0.45);
+}
+.grade-glow-a {
+    text-shadow: 0 0 24px rgba(0, 194, 255, 0.45);
+}
+.grade-glow-b {
+    text-shadow: 0 0 24px rgba(0, 212, 178, 0.45);
+}
+.grade-glow-c {
+    text-shadow: 0 0 24px rgba(255, 159, 10, 0.45);
+}
+.grade-glow-d {
+    text-shadow: 0 0 24px rgba(255, 107, 0, 0.45);
+}
+.grade-glow-f {
+    text-shadow: 0 0 24px rgba(255, 59, 48, 0.45);
+}
+
+/* hide spin number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* draggable bbox overlay */
+.bbox-rect {
+    position: absolute;
+    border: 1px dashed #00c2ff;
+    background: rgba(0, 194, 255, 0.06);
+    pointer-events: none;
+    z-index: 500;
+}

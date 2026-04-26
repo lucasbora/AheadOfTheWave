@@ -99,7 +99,7 @@ Provide your full legal assessment under Vesilaki 587/2011 and related Finnish l
     try:
         client = anthropic.Anthropic(api_key=settings.ANTHROPIC_API_KEY)
         msg = client.messages.create(
-            model="claude-opus-4-5",
+            model="claude-sonnet-4-6",
             max_tokens=1500,
             system=_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": user_prompt}],

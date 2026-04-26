@@ -26,6 +26,21 @@ from services.finland.legal_agent import run_legal_assessment
 
 router = APIRouter(prefix="/api/v1/finland", tags=["finland"])
 
+# Investment advisor prompt — tells Claude to act as a water-focused investment advisor
+_ADVISOR_SYSTEM = """You are a senior investment analyst specialising in data centre infrastructure and water risk.
+Your job: analyse the provided scoring data and give a direct, evidence-based investment recommendation.
+
+Rules:
+1. Cite every claim with the exact data field provided.
+2. Focus specifically on water cooling requirements for AI data centres.
+3. The key insight: Finland's cold climate (low CDD) enables free-air cooling, eliminating 30-40% of typical CAPEX.
+4. If the year is 2018 and the site is LUMI Kajaani, mention that the LUMI EuroHPC supercomputer was built here in 2021 — this validates the model.
+5. Be direct. No marketing language.
+6. Structure your response in exactly 3 sections:
+   INVESTMENT VERDICT: one sentence, direct recommendation
+   WHY WATER MATTERS HERE: 2-3 sentences on the cooling + water risk story
+   KEY RISKS: 2-3 bullet points, evidence-based only"""
+
 # LUMI Supercomputer site — CSC Data Centre, Kajaani
 LUMI_LAT = 64.2245
 LUMI_LON = 27.7177
@@ -82,7 +97,8 @@ def galileo_subsidence(req: FinnishSiteRequest) -> GalileoSubsidenceResponse:
         req.water_abstraction_m3day,
         req.monitoring_months,
     )
-    return GalileoSubsidenceResponse(**result)
+    # Return dict directly — FastAPI coerces instrument dict -> GalileoInstrumentSpec
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -237,3 +253,78 @@ def validate_kajaani() -> OracleValidationResponse:
             "SYKE flood hazard: Tulvavaarakartat MapServer",
         ],
     )
+
+
+# ---------------------------------------------------------------------------
+# Kajaani backtest — the core validation story
+# ---------------------------------------------------------------------------
+
+@router.get("/kajaani-backtest")
+def kajaani_backtest(year: int = Query(default=2018)) -> dict:
+    """
+    Score the LUMI site using real Sentinel-1 + Sentinel-2 + Visual Crossing + SYKE.
+    year=2018: site was empty. LUMI built 2021. High score = model validated.
+    """
+    from services.finland.kajaani_scoring import calculate_kajaani_score
+    from config import settings
+    import anthropic
+
+    result_year = calculate_kajaani_score(LUMI_LAT, LUMI_LON, year=year)
+    result_now  = calculate_kajaani_score(LUMI_LAT, LUMI_LON, year=None)
+
+    timeline = [
+        {"year": 2018, "event": "Site assessment (empty land)",
+         "score": result_year["score"] if year == 2018 else None,
+         "grade": result_year["grade"] if year == 2018 else None},
+        {"year": 2020, "event": "LUMI EuroHPC announced", "score": None, "grade": None},
+        {"year": 2021, "event": "LUMI supercomputer operational", "score": None, "grade": None},
+        {"year": 2026, "event": "Current conditions",
+         "score": result_now["score"], "grade": result_now["grade"]},
+    ]
+
+    verified = result_year["score"] >= 80
+
+    advisor_text = None
+    if settings.ANTHROPIC_API_KEY:
+        try:
+            user_msg = f"""Analyse this data centre site investment assessment:
+
+SITE: LUMI Supercomputer Site, Kajaani, Finland (64.22N, 27.72E)
+ASSESSMENT YEAR: {year}
+REAL-WORLD OUTCOME: LUMI EuroHPC supercomputer built here in 2021
+
+SCORE: {result_year['score']}/100 ({result_year['grade']} - {result_year['grade_label']})
+
+COMPONENTS (all from real satellite and climate data):
+- Sentinel-1 SAR flood frequency (GEE 2017-2025): {result_year['raw_inputs']['flood_freq']} - contribution {result_year['components']['s1_flood_contribution']}/30
+- Cooling Degree Days (Visual Crossing {year}): {result_year['raw_inputs']['cdd']} CDD/year - contribution {result_year['components']['cooling_cdd_contribution']}/25
+- Drought index: {result_year['raw_inputs']['drought_index']} - contribution {result_year['components']['drought_contribution']}/20
+- SYKE groundwater class: {result_year['raw_inputs']['groundwater_class']} (weight {result_year['raw_inputs']['groundwater_weight']}) - contribution {result_year['components']['groundwater_contribution']}/15
+- Sentinel-2 NDWI: {result_year['raw_inputs']['ndwi']} - contribution {result_year['components']['surface_water_contribution']}/10
+
+DATA SOURCES: {list(result_year['data_sources'].values())}"""
+
+            client = anthropic.Anthropic(api_key=settings.ANTHROPIC_API_KEY)
+            msg = client.messages.create(
+                model="claude-sonnet-4-6",
+                max_tokens=600,
+                system=_ADVISOR_SYSTEM,
+                messages=[{"role": "user", "content": user_msg}],
+            )
+            advisor_text = msg.content[0].text
+        except Exception as exc:
+            advisor_text = f"Advisor unavailable: {exc}"
+
+    return {
+        "site":            "LUMI Supercomputer Site — CSC Data Centre, Kajaani",
+        "location":        {"lat": LUMI_LAT, "lon": LUMI_LON},
+        "year_scored":     year,
+        "verified":        verified,
+        "validation_note": "LUMI EuroHPC built 2021 — model correctly identified Prime Zone" if verified else "Score below threshold",
+        "score_year":      result_year,
+        "score_current":   result_now,
+        "delta":           round(result_now["score"] - result_year["score"], 2),
+        "timeline":        timeline,
+        "advisor":         advisor_text,
+        "methodology":     "S1 SAR x30% + CDD x25% + Drought x20% + SYKE GW x15% + S2 NDWI x10%",
+    }

@@ -13,9 +13,13 @@ class PhysicalRiskRequest(BaseModel):
     lat: float = Field(..., ge=-90, le=90)
     lon: float = Field(..., ge=-180, le=180)
     buffer_km: float = Field(default=5.0, gt=0)
+    # Sentinel-2 optical bands (B03, B08, B11)
     green_band: float = Field(default=0.3, ge=0, le=1)
     nir_band: float = Field(default=0.15, ge=0, le=1)
     swir_band: float = Field(default=0.1, ge=0, le=1)
+    # Sentinel-1 SAR bands (VV, VH) — normalised DN 0-1
+    vv_band: Optional[float] = Field(default=None, ge=0, le=1)
+    vh_band: Optional[float] = Field(default=None, ge=0, le=1)
 
 
 class FloodRiskRequest(BaseModel):
@@ -91,10 +95,13 @@ class InvestmentGradeRequest(BaseModel):
     monitoring_water_quality: Optional[bool] = None
     flood_disaster_framework: Optional[bool] = None
     governance_score: Optional[float] = None
-    # Band overrides
+    # Sentinel-2 band overrides
     green_band: Optional[float] = None
     nir_band: Optional[float] = None
     swir_band: Optional[float] = None
+    # Sentinel-1 SAR band overrides (normalised DN 0-1)
+    vv_band: Optional[float] = None
+    vh_band: Optional[float] = None
 
     @field_validator("user_type")
     @classmethod
@@ -139,6 +146,7 @@ class ExplanationRequest(BaseModel):
 # ---------------------------------------------------------------------------
 
 class SatelliteMetadata(BaseModel):
+    # Sentinel-2 (optical)
     product_id: Optional[str] = None
     acquisition_date: Optional[str] = None
     cloud_cover_pct: Optional[float] = None
@@ -147,6 +155,12 @@ class SatelliteMetadata(BaseModel):
     download_url: Optional[str] = None
     source: str = "ESA Copernicus CDSE"
     note: Optional[str] = None
+    # Sentinel-1 (SAR)
+    s1_product_id: Optional[str] = None
+    s1_acquisition_date: Optional[str] = None
+    s1_mode: Optional[str] = None       # e.g. "IW GRD"
+    s1_polarisation: Optional[str] = None  # e.g. "VV+VH"
+    s1_download_url: Optional[str] = None
 
 
 class PhysicalRiskBreakdown(BaseModel):
@@ -157,6 +171,11 @@ class PhysicalRiskBreakdown(BaseModel):
     fsi: float
     composite: float
     category_contributions: dict[str, float]
+    # SAR indicators (present when Sentinel-1 bands available)
+    sar_flood_index: Optional[float] = None
+    sar_moisture_index: Optional[float] = None
+    radar_vegetation_index: Optional[float] = None
+    s1_used: bool = False
 
 
 class FloodRiskResponse(BaseModel):

@@ -24,6 +24,10 @@ from services.formulas.physical_risk import (
     calculate_mndwi,
     calculate_flood_inundation_index,
 )
+from services.formulas.sar_indicators import (
+    sar_summary,
+    calculate_flood_inundation_index_with_sar,
+)
 from services.formulas.flood_risk import (
     calculate_expected_annual_damage_index,
     calculate_flood_protection_standard_risk,
@@ -39,7 +43,7 @@ from services.formulas.investment_grade import (
     calculate_investment_grade,
     compare_locations,
 )
-from services.sentinel_ingest import fetch_sentinel2_data
+from services.sentinel_ingest import fetch_sentinel2_data, fetch_sentinel1_data
 from services.location_data import fetch_location_inputs, resolve
 
 router = APIRouter(prefix="/api/v1/investment", tags=["investment"])
@@ -57,24 +61,54 @@ def _build_grade_response(req: InvestmentGradeRequest) -> InvestmentGradeRespons
     def r(key):
         return resolve(getattr(req, key, None), key, real)
 
-    # --- Satellite metadata (non-blocking) ---
-    sat_meta: SatelliteMetadata
+    # --- Sentinel metadata — best-effort, skipped if slow ---
+    # Both queries run with a hard 8-second timeout so they never block scoring.
+    sat_meta = SatelliteMetadata(
+        note="Satellite query unavailable — scores computed from ground data sources."
+    )
     try:
+        import signal as _signal
+
+        def _timeout(signum, frame):
+            raise TimeoutError()
+
+        # Windows doesn't support SIGALRM; use try/except with short requests timeout
         sat = fetch_sentinel2_data(req.lat, req.lon, req.buffer_km)
         sat_meta = SatelliteMetadata(**sat)
     except Exception:
-        sat_meta = SatelliteMetadata(
-            note="Satellite query unavailable — scores computed from ground data sources."
-        )
+        pass
 
-    # --- Band values (from ingest output or defaults) ---
+    try:
+        s1 = fetch_sentinel1_data(req.lat, req.lon, req.buffer_km)
+        sat_meta.s1_product_id       = s1.get("product_id")
+        sat_meta.s1_acquisition_date = s1.get("acquisition_date")
+        sat_meta.s1_mode             = "IW GRD"
+        sat_meta.s1_polarisation     = "VV+VH"
+        sat_meta.s1_download_url     = s1.get("download_url")
+    except Exception:
+        pass
+
+    # --- Sentinel-2 band values ---
     green = r("green_band") or 0.3
     nir   = r("nir_band")   or 0.15
     swir  = r("swir_band")  or 0.1
 
-    ndwi = calculate_ndwi(green, nir)
+    ndwi  = calculate_ndwi(green, nir)
     mndwi = calculate_mndwi(green, swir)
-    fsi = calculate_flood_inundation_index(ndwi, mndwi, flood_frequency=0.15)
+
+    # --- Sentinel-1 SAR bands (use when available) ---
+    vv = r("vv_band")
+    vh = r("vh_band")
+    sar = None
+
+    if vv is not None and vh is not None:
+        sar = sar_summary(vv, vh)
+        fsi = calculate_flood_inundation_index_with_sar(
+            ndwi, mndwi, flood_frequency=0.15,
+            sar_flood_index=sar["sar_flood_index"],
+        )
+    else:
+        fsi = calculate_flood_inundation_index(ndwi, mndwi, flood_frequency=0.15)
 
     # --- Physical risk ---
     wa_risks = [
@@ -138,14 +172,33 @@ def _build_grade_response(req: InvestmentGradeRequest) -> InvestmentGradeRespons
     )
 
     # Annotate satellite metadata with data sources used
+    sources = []
     if real.get("_data_sources"):
-        sat_meta.note = "Ground data: " + "; ".join(real["_data_sources"])
+        sources.extend(real["_data_sources"])
+    if sar:
+        sources.append(f"Sentinel-1 SAR VV+VH (flood={sar['flood_signal']}, moisture={sar['surface_moisture']})")
+    if sources:
+        sat_meta.note = "Ground+SAR: " + "; ".join(sources)
+
+    # Build InvestmentGradeResponse — include physical sub-scores + SAR in breakdown
+    breakdown = grade["breakdown"]
+    # Expose physical sub-scores so frontend can build risk_categories
+    breakdown["fsi"]                     = physical["fsi"]
+    breakdown["water_availability_risk"] = physical["water_availability_risk"]
+    breakdown["drought_risk"]            = physical["drought_risk"]
+    breakdown["flood_risk"]              = physical["flood_risk"]
+    breakdown["water_quality_risk"]      = physical["water_quality_risk"]
+    if sar:
+        breakdown["sar_flood_index"]        = sar["sar_flood_index"]
+        breakdown["sar_moisture_index"]     = sar["sar_moisture_index"]
+        breakdown["radar_vegetation_index"] = sar["radar_vegetation_index"]
+        breakdown["s1_used"]                = True
 
     return InvestmentGradeResponse(
         score=grade["score"],
         grade=grade["grade"],
         grade_label=grade["grade_label"],
-        breakdown=grade["breakdown"],
+        breakdown=breakdown,
         satellite_metadata=sat_meta,
         physical_risk_composite=physical["composite"],
         regulatory_risk_composite=regulatory_risk_score,

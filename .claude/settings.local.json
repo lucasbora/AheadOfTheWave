@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python -m pytest tests/test_formulas.py -v)",
-      "Bash(python -c \"from services.location_data import fetch_location_inputs, resolve; from api.routes.investment import _build_grade_response; print\\('imports ok'\\)\")"
+      "Bash(python -c \"from services.location_data import fetch_location_inputs, resolve; from api.routes.investment import _build_grade_response; print\\('imports ok'\\)\")",
+      "Bash(python -c ' *)"
     ]
   }
 }

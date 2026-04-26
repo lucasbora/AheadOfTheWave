@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap");
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg-main: #0a0e1a;
+    --bg-panel: #0b101d;
+    --bg-hover: #131a2b;
+    --border-default: #1e2535;
+    --border-focus: #00c2ff;
+    --text-primary: #ffffff;
+    --text-secondary: #8b95a5;
+    --text-muted: #5c667a;
+    --accent: #00c2ff;
+    --grade-aplus: #30d158;
+    --grade-a: #00c2ff;
+    --grade-b: #00d4b2;
+    --grade-c: #ff9f0a;
+    --grade-d: #ff6b00;
+    --grade-f: #ff3b30;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    background: var(--bg-main);
+    color: var(--text-primary);
+}
+
+body {
+    margin: 0;
+    font-family:
+        "Geist", "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code,
+.font-mono,
+.mono {
+    font-family: "Geist Mono", "Commit Mono", "IBM Plex Mono", monospace;
+    font-feature-settings: "zero", "ss02";
+}
+
+::selection {
+    background: rgba(0, 194, 255, 0.3);
+    color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0e1a;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e2535;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #2a3346;
+}
+
+/* Leaflet dark overrides */
+.leaflet-container {
+    background: #0a0e1a !important;
+    font-family: "Geist", sans-serif;
+}
+.leaflet-control-zoom a {
+    background: #0b101d !important;
+    color: #8b95a5 !important;
+    border: 1px solid #1e2535 !important;
+    border-radius: 0 !important;
+}
+.leaflet-control-zoom a:hover {
+    background: #131a2b !important;
+    color: #00c2ff !important;
+}
+.leaflet-control-attribution {
+    background: rgba(11, 16, 29, 0.85) !important;
+    color: #5c667a !important;
+    font-family: "Geist Mono", monospace !important;
+    font-size: 9px !important;
+    border: 1px solid #1e2535 !important;
+}
+.leaflet-control-attribution a {
+    color: #8b95a5 !important;
+}
+.leaflet-popup-content-wrapper {
+    background: #0b101d !important;
+    color: #fff !important;
+    border: 1px solid #1e2535 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+.leaflet-popup-tip {
+    background: #0b101d !important;
+    border: 1px solid #1e2535 !important;
+}
+.leaflet-popup-close-button {
+    color: #8b95a5 !important;
+}
+
+/* Animated score bar fill */
+@keyframes barFill {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+.bar-fill {
+    transform-origin: left;
+    animation: barFill 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes panelIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.panel-in {
+    animation: panelIn 0.35s ease-out both;
+}
+
+@keyframes drawerSlide {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.drawer-slide {
+    animation: drawerSlide 0.28s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Subtle grid background for terminal feel */
+.terminal-grid-bg {
+    background-image:
+        linear-gradient(rgba(30, 37, 53, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 37, 53, 0.4) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: -1px -1px;
+}
+
+@layer base {
+    :root {
+        --background: 224 39% 7%;
+        --foreground: 0 0% 100%;
+        --card: 223 39% 8%;
+        --card-foreground: 0 0% 100%;
+        --popover: 223 39% 8%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 195 100% 50%;
+        --primary-foreground: 224 39% 7%;
+        --secondary: 222 27% 16%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 222 27% 16%;
+        --muted-foreground: 215 13% 60%;
+        --accent: 195 100% 50%;
+        --accent-foreground: 224 39% 7%;
+        --destructive: 4 100% 59%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 222 27% 16%;
+        --input: 222 27% 16%;
+        --ring: 195 100% 50%;
+        --radius: 0px;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}

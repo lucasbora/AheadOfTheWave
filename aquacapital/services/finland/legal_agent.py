@@ -38,13 +38,16 @@ Rules you ALWAYS apply:
 3. Class 1A/1B groundwater areas trigger strict protection obligations (Vesilaki Ch.3 §4)
 4. Data centres in groundwater protection zones require Environmental Permit
 5. You never give definitive legal advice — always recommend engaging a Finnish environmental lawyer
+6. Keep output concise and practical. Do not generate long preambles, markdown tables, or broad legal essays.
+7. Do not use phrases like "Before the substantive assessment".
+8. If input values are missing, write "not provided" once and continue with bounded advice.
 
-Format your response as:
-1. PERMIT REQUIREMENTS (bullet list of specific permits needed)
-2. RESTRICTIONS (what is prohibited or restricted)
-3. RISK FLAGS (what needs further assessment)
-4. RECOMMENDED ACTIONS (concrete next steps)
-5. LEGAL CITATIONS (specific Vesilaki chapters/sections)"""
+Format your response as plain text with these sections only:
+1. PERMIT REQUIREMENTS (max 5 bullet points)
+2. RESTRICTIONS (max 4 bullet points)
+3. RISK FLAGS (max 4 bullet points)
+4. RECOMMENDED ACTIONS (max 4 bullet points)
+5. LEGAL CITATIONS (max 6 short citations)"""
 
 
 def run_legal_assessment(
@@ -65,28 +68,44 @@ def run_legal_assessment(
     gw    = syke_data.get("groundwater", {})
     lake  = syke_data.get("lake_depth", {})
 
+    def _clean(value, default: str = "not provided"):
+        if value in (None, "", "None", "none", "unknown", "Unknown", "null"):
+            return default
+        return value
+
+    in_50 = _clean(flood.get("in_50yr_zone"), "not provided")
+    in_100 = _clean(flood.get("in_100yr_zone"), "not provided")
+    in_250 = _clean(flood.get("in_250yr_zone"), "not provided")
+    flood_label = _clean(flood.get("flood_zone_label"), "not provided")
+    gw_class = _clean(gw.get("groundwater_class"), "unclassified")
+    area_name = _clean(gw.get("area_name"), "not provided")
+    class_weight = _clean(gw.get("class_weight"), "not provided")
+    lake_name = _clean(lake.get("nearest_lake_name"), "not provided")
+    max_depth = _clean(lake.get("max_depth_m"), "not provided")
+    heat_exchange = _clean(lake.get("heat_exchange_viable"), "not provided")
+
     user_prompt = f"""
 Assess this proposed {facility_type} development under Finnish water law.
 
 LOCATION: {lat}°N, {lon}°E
 
 SYKE FLOOD HAZARD DATA:
-- In 50-year flood zone:  {flood.get('in_50yr_zone', 'unknown')}
-- In 100-year flood zone: {flood.get('in_100yr_zone', 'unknown')}
-- In 250-year flood zone: {flood.get('in_250yr_zone', 'unknown')}
-- Flood zone label: {flood.get('flood_zone_label', 'unknown')}
+- In 50-year flood zone:  {in_50}
+- In 100-year flood zone: {in_100}
+- In 250-year flood zone: {in_250}
+- Flood zone label: {flood_label}
 - Data source: {flood.get('syke_source', 'SYKE Tulvavaarakartat')}
 
 SYKE GROUNDWATER CLASSIFICATION:
-- Groundwater class: {gw.get('groundwater_class', 'None (unclassified)')}
-- Area name: {gw.get('area_name', 'N/A')}
-- CNDCP weight: {gw.get('class_weight', 0.3)}
+- Groundwater class: {gw_class}
+- Area name: {area_name}
+- CNDCP weight: {class_weight}
 - Data source: {gw.get('syke_source', 'SYKE Pohjavesialueet')}
 
 NEAREST LAKE (for water intake):
-- Lake: {lake.get('nearest_lake_name', 'N/A')}
-- Max depth: {lake.get('max_depth_m', 'N/A')} m
-- Heat exchange viable: {lake.get('heat_exchange_viable', False)}
+- Lake: {lake_name}
+- Max depth: {max_depth} m
+- Heat exchange viable: {heat_exchange}
 
 FACILITY PARAMETERS:
 - Type: {facility_type}
@@ -100,7 +119,7 @@ Provide your full legal assessment under Vesilaki 587/2011 and related Finnish l
         client = anthropic.Anthropic(api_key=settings.ANTHROPIC_API_KEY)
         msg = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=1500,
+            max_tokens=900,
             system=_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": user_prompt}],
         )

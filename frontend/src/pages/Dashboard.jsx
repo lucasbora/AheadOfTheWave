@@ -55,21 +55,32 @@ export default function Dashboard() {
       location_name: name,
     };
     try {
-      const [s, a, ln] = await Promise.allSettled([
+      const [s, ln] = await Promise.allSettled([
         ext.scoreInvestment(body),
-        ext.explainInvestment({
-          lat: coord.lat,
-          lon: coord.lon,
-          user_type: userType,
-        }),
         ext.lineage({ lat: coord.lat, lon: coord.lon, user_type: userType }),
       ]);
-      if (s.status === "fulfilled") setScore(s.value);
-      else
+
+      if (s.status === "fulfilled") {
+        setScore(s.value);
+
+        try {
+          const advisory = await ext.explainInvestment({
+            investment_grade_response: s.value,
+            user_type: userType,
+            location_name: name,
+          });
+          setAudit(advisory);
+        } catch (e) {
+          toast.error(
+            `Claude explanation failed: ${e?.message || "request error"}`
+          );
+        }
+      } else {
         toast.error(
           `Score endpoint failed: ${s.reason?.message || "request error"}`
         );
-      if (a.status === "fulfilled") setAudit(a.value);
+      }
+
       if (ln.status === "fulfilled") setLineage(ln.value);
     } catch (e) {
       toast.error(`Backend unreachable at ${loadSettings().apiBaseUrl}`);

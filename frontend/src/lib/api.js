@@ -38,16 +38,56 @@ const internalClient = axios.create({
   timeout: 30000,
 });
 
+function reshapeAuditForPanel(audit) {
+  if (!audit || typeof audit !== "object") return audit;
+
+  const topRisks = (audit.top_risks || []).map((risk) => ({
+    ...risk,
+    field_path: risk.field_path || risk.evidence_paths || [],
+  }));
+
+  const nextChecks = (audit.recommended_next_checks || audit.next_checks || []).map(
+    (check) => ({
+      ...check,
+      text: check.text || check.check || "",
+    })
+  );
+
+  return {
+    ...audit,
+    feasibility: {
+      water: audit?.water_feasibility?.status || audit?.feasibility?.water || "unknown",
+      cooling:
+        audit?.cooling_feasibility?.status || audit?.feasibility?.cooling || "unknown",
+      permit: audit?.permit_feasibility?.status || audit?.feasibility?.permit || "unknown",
+    },
+    overall: audit?.overall_assessment || audit?.overall || {},
+    top_risks: topRisks,
+    next_checks: nextChecks,
+  };
+}
+
 // ---- External backend (real scoring + Claude) ----
 export const ext = {
   scoreInvestment: (body) =>
     externalClient()
       .post("/api/v1/score/investment", body)
       .then((r) => r.data),
-  explainInvestment: (params) =>
-    externalClient()
-      .get("/api/v1/explanation/investment", { params })
-      .then((r) => r.data),
+  explainInvestment: (input) => {
+    if (input?.investment_grade_response) {
+      return externalClient()
+        .post("/api/v1/explanation/investment", {
+          investment_grade_response: input.investment_grade_response,
+          user_type: input.user_type,
+          location_name: input.location_name,
+        })
+        .then((r) => reshapeAuditForPanel(r.data));
+    }
+
+    return externalClient()
+      .get("/api/v1/explanation/investment", { params: input })
+      .then((r) => reshapeAuditForPanel(r.data));
+  },
   heatmap: (body) =>
     externalClient()
       .post("/api/v1/heatmap", body)

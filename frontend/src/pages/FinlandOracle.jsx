@@ -69,7 +69,7 @@ export default function FinlandOracle() {
   const [backtest, setBacktest] = useState(null);
   const [loading, setLoading] = useState(false);
   const [legalOpen, setLegalOpen] = useState(false);
-  const [year, setYear] = useState(2018);
+  const year = 2018;
 
   const loadBacktest = async (yr) => {
     setLoading(true);
@@ -85,7 +85,10 @@ export default function FinlandOracle() {
     }
   };
 
-  useEffect(() => { loadBacktest(year); }, []);
+  useEffect(() => {
+    loadBacktest(year);
+    // baseline is intentionally fixed for demo storytelling: "before 2018"
+  }, [year]);
 
   const score_year    = backtest?.score_year || {};
   const score_current = backtest?.score_current || {};
@@ -125,19 +128,19 @@ export default function FinlandOracle() {
             </div>
           </div>
           <div className="flex items-center gap-2 flex-wrap">
-            {[2016, 2017, 2018].map(yr => (
-              <button key={yr} onClick={() => { setYear(yr); loadBacktest(yr); }}
-                className="mono px-3 py-2 text-[11px]"
-                style={{
-                  background: year === yr ? "#00C2FF" : "transparent",
-                  color: year === yr ? "#0A0E1A" : "#8B95A5",
-                  border: `1px solid ${year === yr ? "#00C2FF" : "#1E2535"}`,
-                  borderRadius: 0,
-                }}
-                data-testid={`year-btn-${yr}`}>
-                {yr}
-              </button>
-            ))}
+            <button
+              onClick={() => loadBacktest(year)}
+              className="mono px-3 py-2 text-[11px]"
+              style={{
+                background: "#00C2FF",
+                color: "#0A0E1A",
+                border: "1px solid #00C2FF",
+                borderRadius: 0,
+              }}
+              data-testid="year-btn-before-2018"
+            >
+              BEFORE 2018
+            </button>
             <button onClick={() => loadBacktest(year)} disabled={loading}
               className="mono inline-flex items-center gap-1.5 px-3 py-2 text-[11px] border border-[#1E2535] hover:border-[#00C2FF] hover:text-[#00C2FF] text-[#8B95A5]"
               style={{ borderRadius: 0 }}>
@@ -189,8 +192,8 @@ export default function FinlandOracle() {
         <div className="panel">
           <div className="px-4 py-2.5 border-b border-[#1E2535] flex justify-between items-center">
             <div>
-              <div className="label-overline">SCORE · {year}</div>
-              <div className="text-[13px] mt-0.5">What a {year} investor would see</div>
+              <div className="label-overline">SCORE · BEFORE 2018</div>
+              <div className="text-[13px] mt-0.5">What a pre-2018 investor would see</div>
             </div>
             {verified && <span className="mono text-[10px] px-2 py-1"
               style={{ color: "#30D158", background: "rgba(48,209,88,0.10)", border: "1px solid rgba(48,209,88,0.4)" }}>
@@ -246,7 +249,7 @@ export default function FinlandOracle() {
                 <ScoreBar value={score_current.score} grade={score_current.grade} />
                 <div className="mono text-[11px] text-[#8B95A5] mt-2">{score_current.grade_label}</div>
                 <div className="mt-3 pt-3 border-t border-[#1E2535] mono text-[11px]">
-                  <span className="text-[#5C667A]">delta from {year}: </span>
+                  <span className="text-[#5C667A]">delta from before 2018: </span>
                   <span style={{ color: backtest?.delta >= 0 ? "#30D158" : "#FF3B30" }}>
                     {backtest?.delta >= 0 ? "+" : ""}{backtest?.delta?.toFixed(2)}
                   </span>

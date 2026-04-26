@@ -1,0 +1,213 @@
+{
+  "locations": [
+    {
+      "id": "45db8109-4e0d-4310-9009-6cb36e86b3ed",
+      "created_at": "2026-04-26T10:03:13.145475",
+      "name": "Helsinki HQ",
+      "lat": 65.57421492108229,
+      "lon": 25.817871093750004,
+      "user_type": "data_center",
+      "grade": "B",
+      "score": 70.49,
+      "label": "Acceptable with Mitigation",
+      "payload": {
+        "score": 70.49,
+        "grade": "B",
+        "grade_label": "Acceptable with Mitigation",
+        "breakdown": {
+          "physical_risk": 31,
+          "regulatory_risk": 10,
+          "compliance": 13.2,
+          "ead": 16.29,
+          "fsi": 0.5408,
+          "water_availability_risk": 0.5,
+          "drought_risk": 0.25,
+          "flood_risk": 0,
+          "water_quality_risk": 0.25
+        },
+        "satellite_metadata": {
+          "product_id": "8289bd70-189c-4514-af28-b413f0bfacbc",
+          "acquisition_date": "2026-04-21",
+          "cloud_cover_pct": 8.308348,
+          "bounding_box": [
+            25.70893881984825,
+            65.52916987603724,
+            25.926803367651758,
+            65.61925996612733
+          ],
+          "tile_id": "124911",
+          "download_url": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(8289bd70-189c-4514-af28-b413f0bfacbc)/$value",
+          "source": "ESA Copernicus CDSE",
+          "note": "Ground+SAR: EEA WISE WFD (Unknown \u2014 No data within 50 km); Open-Meteo ERA5 (drought/groundwater); Open-Meteo ERA5 (flood events/depth)",
+          "s1_product_id": "c16f218f-f5ed-4274-bfc1-0b9581609a82",
+          "s1_acquisition_date": "2026-04-26",
+          "s1_mode": "IW GRD",
+          "s1_polarisation": "VV+VH",
+          "s1_download_url": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(c16f218f-f5ed-4274-bfc1-0b9581609a82)/$value"
+        },
+        "physical_risk_composite": 0.225,
+        "regulatory_risk_composite": 0.5,
+        "compliance_score": 0.88,
+        "ead_index": 0.3484,
+        "recommendation_summary": "Location scores 70.5/100 \u2014 viable for data center development subject to targeted flood and regulatory mitigation.",
+        "user_type": "data_center",
+        "location_name": "Helsinki HQ",
+        "timestamp": "2026-04-26T10:00:13.379136",
+        "rank": null,
+        "delta_from_best": null,
+        "label": "Acceptable with Mitigation",
+        "risk_categories": [
+          {
+            "name": "water_availability",
+            "key": "water_availability",
+            "score_1_5": 3,
+            "contribution_pct": 25,
+            "normalized": 0.5
+          },
+          {
+            "name": "drought",
+            "key": "drought",
+            "score_1_5": 2,
+            "contribution_pct": 15,
+            "normalized": 0.25
+          },
+          {
+            "name": "flooding",
+            "key": "flooding",
+            "score_1_5": 1,
+            "contribution_pct": 35,
+            "normalized": 0
+          },
+          {
+            "name": "water_quality",
+            "key": "water_quality",
+            "score_1_5": 2,
+            "contribution_pct": 25,
+            "normalized": 0.25
+          }
+        ],
+        "fsi": 0.5408,
+        "satellite": {
+          "tile_id": "124911",
+          "acquisition_date": "2026-04-21",
+          "cloud_cover": 8.308348,
+          "source": "ESA Copernicus CDSE",
+          "note": "Ground+SAR: EEA WISE WFD (Unknown \u2014 No data within 50 km); Open-Meteo ERA5 (drought/groundwater); Open-Meteo ERA5 (flood events/depth)",
+          "s1_date": "2026-04-26",
+          "s1_mode": "IW GRD"
+        }
+      }
+    },
+    {
+      "id": "68e2fbde-14a7-40a9-a6b8-155faac54635",
+      "created_at": "2026-04-26T09:59:51.917861",
+      "name": "Helsinki HQ",
+      "lat": 62.87047510077873,
+      "lon": 22.763671875000004,
+      "user_type": "data_center",
+      "grade": "B",
+      "score": 66.99,
+      "label": "Acceptable with Mitigation",
+      "payload": {
+        "score": 66.99,
+        "grade": "B",
+        "grade_label": "Acceptable with Mitigation",
+        "breakdown": {
+          "physical_risk": 27.5,
+          "regulatory_risk": 10,
+          "compliance": 13.2,
+          "ead": 16.29,
+          "fsi": 0.5408,
+          "water_availability_risk": 0.5,
+          "drought_risk": 0.25,
+          "flood_risk": 0.25,
+          "water_quality_risk": 0.25
+        },
+        "satellite_metadata": {
+          "product_id": "615d2632-26c1-4123-8991-754f416403ff",
+          "acquisition_date": "2026-04-21",
+          "cloud_cover_pct": 1e-05,
+          "bounding_box": [
+            25.269408739031242,
+            62.59778911853237,
+            25.465454542218765,
+            62.687879208622455
+          ],
+          "tile_id": "131414",
+          "download_url": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(615d2632-26c1-4123-8991-754f416403ff)/$value",
+          "source": "ESA Copernicus CDSE",
+          "note": "Ground+SAR: EEA WISE WFD (Unknown \u2014 No data within 50 km); Open-Meteo ERA5 (drought/groundwater); Open-Meteo ERA5 (flood events/depth)",
+          "s1_product_id": "740aec00-cb4c-4df2-a43c-627789607eda",
+          "s1_acquisition_date": "2026-04-25",
+          "s1_mode": "IW GRD",
+          "s1_polarisation": "VV+VH",
+          "s1_download_url": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(740aec00-cb4c-4df2-a43c-627789607eda)/$value"
+        },
+        "physical_risk_composite": 0.3125,
+        "regulatory_risk_composite": 0.5,
+        "compliance_score": 0.88,
+        "ead_index": 0.3484,
+        "recommendation_summary": "Location scores 67.0/100 \u2014 viable for data center development subject to targeted flood and regulatory mitigation.",
+        "user_type": "data_center",
+        "location_name": "Helsinki HQ",
+        "timestamp": "2026-04-26T09:58:01.201656",
+        "rank": null,
+        "delta_from_best": null,
+        "label": "Acceptable with Mitigation",
+        "risk_categories": [
+          {
+            "name": "water_availability",
+            "key": "water_availability",
+            "score_1_5": 3,
+            "contribution_pct": 25,
+            "normalized": 0.5
+          },
+          {
+            "name": "drought",
+            "key": "drought",
+            "score_1_5": 2,
+            "contribution_pct": 15,
+            "normalized": 0.25
+          },
+          {
+            "name": "flooding",
+            "key": "flooding",
+            "score_1_5": 2,
+            "contribution_pct": 35,
+            "normalized": 0.25
+          },
+          {
+            "name": "water_quality",
+            "key": "water_quality",
+            "score_1_5": 2,
+            "contribution_pct": 25,
+            "normalized": 0.25
+          }
+        ],
+        "fsi": 0.5408,
+        "satellite": {
+          "tile_id": "131414",
+          "acquisition_date": "2026-04-21",
+          "cloud_cover": 1e-05,
+          "source": "ESA Copernicus CDSE",
+          "note": "Ground+SAR: EEA WISE WFD (Unknown \u2014 No data within 50 km); Open-Meteo ERA5 (drought/groundwater); Open-Meteo ERA5 (flood events/depth)",
+          "s1_date": "2026-04-25",
+          "s1_mode": "IW GRD"
+        }
+      }
+    }
+  ],
+  "leaderboard": [
+    {
+      "id": "987f0470-0bd4-468f-8a8d-039c3e2d0a94",
+      "created_at": "2026-04-26T10:03:14.814465",
+      "name": "Helsinki HQ",
+      "lat": 65.57421492108229,
+      "lon": 25.817871093750004,
+      "user_type": "data_center",
+      "grade": "B",
+      "score": 70.49,
+      "label": "Acceptable with Mitigation"
+    }
+  ]
+}

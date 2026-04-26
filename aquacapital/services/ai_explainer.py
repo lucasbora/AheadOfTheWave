@@ -146,6 +146,9 @@ Writing style:
 5. No vague optimism.
 6. No tables.
 7. No markdown.
+8. Do not output legal memo preambles.
+9. Do not repeat raw tokens like "None", "null", or "unknown" in narrative prose.
+10. Put missing inputs in data_gaps only.
 
 Final reasoning checklist before answering:
 1. Did I use only provided evidence?
@@ -193,6 +196,12 @@ Nordic data centre context:
 - Post-glacial isostatic rebound in Finland (+4 to +10 mm/year) is structurally beneficial but does not eliminate extraction-induced local subsidence risk.
 - Watershed replenishment targets follow Cargill/WRI Practice Note (2022). If total_target_m3yr is 0, the watershed is already below the desired depletion level.
 - The LUMI Supercomputer at this location (if validation_year field present) is real-world ground truth. If verified = true, state this explicitly as a validation anchor.
+
+Writing constraints:
+- Keep language concise and operational.
+- Do not emit legal memo preambles.
+- Avoid repeating raw tokens like "None", "null", or "unknown" in narrative prose.
+- Put missing inputs in data_gaps only.
 
 Required output — return valid JSON only with exactly these keys:
 {

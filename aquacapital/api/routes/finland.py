@@ -26,20 +26,24 @@ from services.finland.legal_agent import run_legal_assessment
 
 router = APIRouter(prefix="/api/v1/finland", tags=["finland"])
 
-# Investment advisor prompt — tells Claude to act as a water-focused investment advisor
-_ADVISOR_SYSTEM = """You are a senior investment analyst specialising in data centre infrastructure and water risk.
-Your job: analyse the provided scoring data and give a direct, evidence-based investment recommendation.
+# Investment advisor prompt — constrained to scorecard inputs only.
+_ADVISOR_SYSTEM = """You are AquaCapital's data centre investment advisor.
+You must stay inside the provided scorecard values only.
 
-Rules:
-1. Cite every claim with the exact data field provided.
-2. Focus specifically on water cooling requirements for AI data centres.
-3. The key insight: Finland's cold climate (low CDD) enables free-air cooling, eliminating 30-40% of typical CAPEX.
-4. If the year is 2018 and the site is LUMI Kajaani, mention that the LUMI EuroHPC supercomputer was built here in 2021 — this validates the model.
-5. Be direct. No marketing language.
-6. Structure your response in exactly 3 sections:
-   INVESTMENT VERDICT: one sentence, direct recommendation
-   WHY WATER MATTERS HERE: 2-3 sentences on the cooling + water risk story
-   KEY RISKS: 2-3 bullet points, evidence-based only"""
+Hard bounds:
+1. Use only these fields: score, grade, grade_label, flood_freq and contribution, CDD and contribution, drought_index and contribution, groundwater_class and contribution, NDWI and contribution.
+2. Do not add legal analysis, permit requirements, flood-zone law, or external datasets.
+3. Do not output data-quality preambles and do not use the words \"unknown\", \"None\", or \"null\".
+4. If groundwater class is unclassified, call it \"unclassified\" and continue.
+5. Keep output under 170 words.
+
+Output format (plain text only):
+INVESTMENT VERDICT: <one sentence>
+WHY THIS SCORE: <two concise sentences using the provided numbers>
+ADVISORY ACTIONS:
+- <action 1>
+- <action 2>
+- <action 3>"""
 
 # LUMI Supercomputer site — CSC Data Centre, Kajaani
 LUMI_LAT = 64.2245
@@ -287,27 +291,35 @@ def kajaani_backtest(year: int = Query(default=2018)) -> dict:
     advisor_text = None
     if settings.ANTHROPIC_API_KEY:
         try:
-            user_msg = f"""Analyse this data centre site investment assessment:
+            gw_class_raw = result_year["raw_inputs"].get("groundwater_class")
+            gw_class = (
+                "unclassified"
+                if gw_class_raw in (None, "", "None", "null")
+                else str(gw_class_raw)
+            )
 
-SITE: LUMI Supercomputer Site, Kajaani, Finland (64.22N, 27.72E)
-ASSESSMENT YEAR: {year}
-REAL-WORLD OUTCOME: LUMI EuroHPC supercomputer built here in 2021
+            user_msg = f"""Use only this scorecard and do not add outside context.
 
-SCORE: {result_year['score']}/100 ({result_year['grade']} - {result_year['grade_label']})
+site: LUMI Supercomputer Site, Kajaani, Finland (64.22N, 27.72E)
+year_context: before 2018 baseline
+real_world_anchor: LUMI was built here in 2021
 
-COMPONENTS (all from real satellite and climate data):
-- Sentinel-1 SAR flood frequency (GEE 2017-2025): {result_year['raw_inputs']['flood_freq']} - contribution {result_year['components']['s1_flood_contribution']}/30
-- Cooling Degree Days (Visual Crossing {year}): {result_year['raw_inputs']['cdd']} CDD/year - contribution {result_year['components']['cooling_cdd_contribution']}/25
-- Drought index: {result_year['raw_inputs']['drought_index']} - contribution {result_year['components']['drought_contribution']}/20
-- SYKE groundwater class: {result_year['raw_inputs']['groundwater_class']} (weight {result_year['raw_inputs']['groundwater_weight']}) - contribution {result_year['components']['groundwater_contribution']}/15
-- Sentinel-2 NDWI: {result_year['raw_inputs']['ndwi']} - contribution {result_year['components']['surface_water_contribution']}/10
+score: {result_year['score']}/100
+grade: {result_year['grade']}
+grade_label: {result_year['grade_label']}
 
-DATA SOURCES: {list(result_year['data_sources'].values())}"""
+components:
+- s1_sar_flood_frequency: {result_year['raw_inputs']['flood_freq']} -> {result_year['components']['s1_flood_contribution']}/30
+- cooling_degree_days: {result_year['raw_inputs']['cdd']} -> {result_year['components']['cooling_cdd_contribution']}/25
+- drought_index: {result_year['raw_inputs']['drought_index']} -> {result_year['components']['drought_contribution']}/20
+- groundwater_class: {gw_class} -> {result_year['components']['groundwater_contribution']}/15
+- s2_ndwi: {result_year['raw_inputs']['ndwi']} -> {result_year['components']['surface_water_contribution']}/10
+"""
 
             client = anthropic.Anthropic(api_key=settings.ANTHROPIC_API_KEY)
             msg = client.messages.create(
                 model="claude-sonnet-4-6",
-                max_tokens=600,
+                max_tokens=420,
                 system=_ADVISOR_SYSTEM,
                 messages=[{"role": "user", "content": user_msg}],
             )

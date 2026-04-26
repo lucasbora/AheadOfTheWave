@@ -14,6 +14,8 @@ L.Icon.Default.mergeOptions({
 const DARK_TILES = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
 const ATTRIB =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
+const FINLAND_GEOJSON_URL =
+  "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/FIN.geo.json";
 
 function makePinIcon(grade) {
   const key = gradeToKey(grade);
@@ -37,6 +39,7 @@ function makeDotIcon(color) {
 export const LeafletMap = ({
   center = [60.1699, 24.9384],
   zoom = 5,
+  highlightFinland = false,
   marker, // {lat, lon}
   onClick, // (lat, lon) => void
   heatmapPoints, // [{lat, lon, color, label}]
@@ -50,6 +53,7 @@ export const LeafletMap = ({
   const markerRef = useRef(null);
   const heatLayerRef = useRef(null);
   const bboxLayerRef = useRef(null);
+  const finlandLayerRef = useRef(null);
   const drawingRef = useRef(null);
 
   useEffect(() => {
@@ -62,6 +66,10 @@ export const LeafletMap = ({
       preferCanvas: true,
     });
     mapRef.current = map;
+    const pane = map.createPane("countryHighlightPane");
+    pane.style.zIndex = "320";
+    pane.style.pointerEvents = "none";
+
     L.tileLayer(DARK_TILES, {
       attribution: ATTRIB,
       subdomains: "abcd",
@@ -159,6 +167,67 @@ export const LeafletMap = ({
       bboxLayerRef.current = b;
     }
   }, [bbox?.n, bbox?.s, bbox?.e, bbox?.w]);
+
+  // Finland highlight overlay
+  useEffect(() => {
+    const m = mapRef.current;
+    if (!m) return;
+
+    if (finlandLayerRef.current) {
+      m.removeLayer(finlandLayerRef.current);
+      finlandLayerRef.current = null;
+    }
+
+    if (!highlightFinland) return;
+
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const res = await fetch(FINLAND_GEOJSON_URL);
+        if (!res.ok) {
+          throw new Error(`Failed to load Finland GeoJSON (${res.status})`);
+        }
+        const geojson = await res.json();
+        if (cancelled || !mapRef.current) return;
+
+        const glow = L.geoJSON(geojson, {
+          pane: "countryHighlightPane",
+          style: {
+            color: "#35B8FF",
+            weight: 7,
+            opacity: 0.2,
+            fillOpacity: 0,
+          },
+        });
+
+        const fill = L.geoJSON(geojson, {
+          pane: "countryHighlightPane",
+          style: {
+            color: "#4BC5FF",
+            weight: 2.2,
+            opacity: 0.95,
+            fillColor: "#1289E8",
+            fillOpacity: 0.22,
+          },
+        });
+
+        const group = L.layerGroup([glow, fill]).addTo(mapRef.current);
+        finlandLayerRef.current = group;
+      } catch (err) {
+        // Keep map functional if remote boundary data is temporarily unavailable.
+        console.warn("[LeafletMap] Finland highlight unavailable:", err);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      if (finlandLayerRef.current && mapRef.current) {
+        mapRef.current.removeLayer(finlandLayerRef.current);
+        finlandLayerRef.current = null;
+      }
+    };
+  }, [highlightFinland]);
 
   // BBox drawing handlers (toggleable from outside via DOM event)
   useEffect(() => {

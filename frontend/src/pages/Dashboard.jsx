@@ -297,6 +297,7 @@ export default function Dashboard() {
         <LeafletMap
           center={[coord.lat, coord.lon]}
           zoom={6}
+          highlightFinland
           marker={marker}
           onClick={(lat, lon) => setCoord({ lat, lon })}
         />
